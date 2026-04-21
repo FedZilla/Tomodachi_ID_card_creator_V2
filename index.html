@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Créateur de Mii — Tomodachi Life : Une vie de rêve</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-islands">🏝️</div>
+  <div class="header-badge">Nintendo Switch • 2026</div>
+  <h1>Créateur de Mii</h1>
+  <p>Tomodachi Life : Une vie de rêve</p>
+</header>
+
+<main>
+
+  <!-- IDENTITÉ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="icon">👤</span>
+      <span>Identité du Mii</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label><span class="emoji">✏️</span>Prénom</label>
+        <input type="text" id="name" maxlength="10" placeholder="Ex : Anaïs" />
+      </div>
+      <div class="field">
+        <label><span class="emoji">🎂</span>Date de naissance</label>
+        <input type="date" id="birthday" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label><span class="emoji">⚧</span>Genre</label>
+      <div class="chips">
+        <input type="radio" name="genre" id="g-homme" value="Homme" />
+        <label for="g-homme">♂ Homme</label>
+        <input type="radio" name="genre" id="g-femme" value="Femme" />
+        <label for="g-femme">♀ Femme</label>
+        <input type="radio" name="genre" id="g-nb" value="Non-binaire" />
+        <label for="g-nb">⚧ Non-binaire</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label><span class="emoji">🗣️</span>Pronoms</label>
+      <div class="chips">
+        <input type="radio" name="pronoms" id="p-il" value="Il/lui" />
+        <label for="p-il">Il / lui</label>
+        <input type="radio" name="pronoms" id="p-elle" value="Elle" />
+        <label for="p-elle">Elle</label>
+        <input type="radio" name="pronoms" id="p-iel" value="Iel" />
+        <label for="p-iel">Iel</label>
+        <input type="radio" name="pronoms" id="p-autre" value="Autre" />
+        <label for="p-autre">Autre</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRÉFÉRENCES -->
+  <div class="card">
+    <div class="card-title">
+      <span class="icon">💖</span>
+      <span>Vie amoureuse & tenues</span>
+    </div>
+
+    <div class="field">
+      <label><span class="emoji">💘</span>Préférences de rencontre</label>
+      <div class="chips">
+        <input type="checkbox" name="pref" id="pref-h" value="Hommes" />
+        <label for="pref-h">♂ Hommes</label>
+        <input type="checkbox" name="pref" id="pref-f" value="Femmes" />
+        <label for="pref-f">♀ Femmes</label>
+        <input type="checkbox" name="pref" id="pref-nb" value="Non-binaires" />
+        <label for="pref-nb">⚧ Non-binaires</label>
+      </div>
+    </div>
+
+    <div class="field">
+      <label><span class="emoji">👗</span>Style de tenue pour les événements</label>
+      <div class="chips">
+        <input type="radio" name="tenue" id="t-masculin" value="Style masculin" />
+        <label for="t-masculin">🧥 Masculin</label>
+        <input type="radio" name="tenue" id="t-feminin" value="Style féminin" />
+        <label for="t-feminin">👗 Féminin</label>
+        <input type="radio" name="tenue" id="t-mix" value="Au choix" />
+        <label for="t-mix">✨ Au choix</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- VOIX -->
+  <div class="card">
+    <div class="card-title">
+      <span class="icon">🎙️</span>
+      <span>Voix du Mii</span>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label><span class="emoji">🔊</span>Hauteur de la voix</label>
+        <div class="slider-row">
+          <span class="slider-label-left">Grave</span>
+          <input type="range" id="voice-pitch" min="1" max="8" value="4" oninput="document.getElementById('vp-val').textContent=this.value" />
+          <span class="slider-value" id="vp-val">4</span>
+          <span class="slider-label-right">Aiguë</span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label><span class="emoji">🎶</span>Intonation / accent</label>
+        <div class="slider-row">
+          <span class="slider-label-left">Neutre</span>
+          <input type="range" id="voice-tone" min="1" max="8" value="4" oninput="document.getElementById('vt-val').textContent=this.value" />
+          <span class="slider-value" id="vt-val">4</span>
+          <span class="slider-label-right">Chantant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PERSONNALITÉ -->
+  <div class="card">
+    <div class="card-title">
+      <span class="icon">🧠</span>
+      <span>Personnalité (5 traits)</span>
+    </div>
+
+    <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:1.2rem; font-weight:600;">
+      Ajuste les 5 curseurs pour définir le tempérament de ton Mii. Le type de personnalité est calculé automatiquement ✨
+    </p>
+
+    <!-- Mouvement -->
+    <div class="field">
+      <label><span class="emoji">🏃</span>Mouvements</label>
+      <div class="slider-row">
+        <span class="slider-label-left">Lent</span>
+        <input type="range" class="pers-slider" id="trait-mouvement" min="1" max="8" value="4" />
+        <span class="slider-value" id="tv-mouvement">4</span>
+        <span class="slider-label-right">Rapide</span>
+      </div>
+    </div>
+
+    <!-- Discours -->
+    <div class="field">
+      <label><span class="emoji">💬</span>Language</label>
+      <div class="slider-row">
+        <span class="slider-label-left">Poli</span>
+        <input type="range" class="pers-slider" id="trait-discours" min="1" max="8" value="4" />
+        <span class="slider-value" id="tv-discours">4</span>
+        <span class="slider-label-right">Direct</span>
+      </div>
+    </div>
+
+    <!-- Énergie -->
+    <div class="field">
+      <label><span class="emoji">⚡</span>Expressivité</label>
+      <div class="slider-row">
+        <span class="slider-label-left">Plat</span>
+        <input type="range" class="pers-slider" id="trait-energie" min="1" max="8" value="4" />
+        <span class="slider-value" id="tv-energie">4</span>
+        <span class="slider-label-right">Intense</span>
+      </div>
+    </div>
+
+    <!-- Attitude -->
+    <div class="field">
+      <label><span class="emoji">😌</span>Tempérament</label>
+      <div class="slider-row">
+        <span class="slider-label-left">Sérieux</span>
+        <input type="range" class="pers-slider" id="trait-attitude" min="1" max="8" value="4" />
+        <span class="slider-value" id="tv-attitude">4</span>
+        <span class="slider-label-right">Décontracté</span>
+      </div>
+    </div>
+
+    <!-- Global -->
+    <div class="field">
+      <label><span class="emoji">🌈</span>Général</label>
+      <div class="slider-row">
+        <span class="slider-label-left">Normal</span>
+        <input type="range" class="pers-slider" id="trait-global" min="1" max="8" value="4" />
+        <span class="slider-value" id="tv-global">4</span>
+        <span class="slider-label-right">Excentrique</span>
+      </div>
+    </div>
+
+    <div id="personality-result">
+      🎲 Le type de personnalité apparaîtra ici…
+    </div>
+  </div>
+
+  <!-- BOUTONS -->
+  <div class="btn-row">
+    <button class="btn btn-primary" onclick="generateSummary()">✅ Voir le résumé du Mii</button>
+    <button class="btn btn-secondary" onclick="copyText()">📋 Copier en texte</button>
+    <button class="btn btn-reset" onclick="resetForm()">🔄 Réinitialiser</button>
+  </div>
+
+  <!-- RÉCAPITULATIF -->
+  <section id="summary-section">
+    <div class="summary-box">
+      <h3>🏝️ Fiche du Mii</h3>
+      <div class="summary-grid" id="summary-grid"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Site non-officiel — Tomodachi Life : Une vie de rêve est une marque de Nintendo • Créé avec ❤️ pour la communauté
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
