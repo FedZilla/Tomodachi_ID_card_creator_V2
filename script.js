@@ -89,7 +89,7 @@ function weightedVal(v) {
     let bdDisplay = '—';
     if (birthday) {
       const dt = new Date(birthday + 'T00:00:00');
-      bdDisplay = dt.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long' });
+      bdDisplay = dt.toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
     }
 
     const items = [
